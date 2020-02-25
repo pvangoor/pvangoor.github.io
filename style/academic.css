@@ -1,0 +1,16 @@
+.paperTitle {
+    font-weight: bold;
+}
+
+.paperImage {
+    width: 100px;
+}
+
+.paperCite {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 2px;
+    font: 8pt courier, serif;
+    color: #000000;
+    background-color: #efefef;
+}

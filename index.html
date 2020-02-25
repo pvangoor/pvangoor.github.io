@@ -6,61 +6,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style/academic.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    function showBlock(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function hideBlock(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    function toggleBlock(id) {
+      if (document.getElementById(id).style.display == 'none') {
+        document.getElementById(id).style.display = 'block';
+      } else {
+        document.getElementById(id).style.display = 'none';
+      }
+    }
+  </script>
+
+
 </head>
 <body>
 <div class="container">
-    <nav class="navbar bg-dark navbar-dark navbar-expand">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Pieter van Goor</a>
-        </div>
-        <!-- <ul class="navbar-nav" id="navbarNav">
-          <li class="nav-item nav-link active"><a href="#">Home</a></li>
-          <li><a class="nav-item nav-link" href="#">Page 1</a></li>
-          <li><a class="nav-item nav-link" href="#">Page 2</a></li>
-          <li><a class="nav-item nav-link" href="#">Page 3</a></li>
-        </ul> -->
-    </nav>
+  <nav class="navbar bg-dark navbar-dark navbar-expand">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Pieter van Goor</a>
+      </div>
+      <ul class="navbar-nav" id="navbarNav">
+        <li class="nav-item nav-link active"><a href="#">Home</a></li>
+        <li><a class="nav-item nav-link" href="#aboutme">About Me</a></li>
+        <li><a class="nav-item nav-link" href="#news">News</a></li>
+        <li><a class="nav-item nav-link" href="#publications">Publications</a></li>
+        <!-- <li><a class="nav-item nav-link" href="#">Page 2</a></li>
+        <li><a class="nav-item nav-link" href="#">Page 3</a></li> -->
+      </ul>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <img src="resources/mugshot.jpg" class="img-thumbnail" alt="Profile Picture">
+      <div>Ph.D. Student</div>
+      <div><a href="http://www.anu.edu.au/">Australian National University</a></div>
+      <div><a href="https://cs.anu.edu.au/">College of Engineering and Computer Science</a></div>
+      <a href="mailto:pieter.vangoor@anu.edu.au">
+        <i class="fa fa-envelope-square" style="font-size:48px;color:green"></i>
+      </a>
+      <a href="https://github.com/pvangoor">
+        <i class="fa fa-github" style="font-size:48px;color:green"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/pieter-van-goor-372a93133/">
+        <i class="fa fa-linkedin" style="font-size:48px;color:green"></i>
+      </a>
+      <a href="https://scholar.google.com.au/citations?user=hwofM7MAAAAJ&hl=en&oi=sra">
+        <i class="material-icons" style="font-size:48px;color:green">school</i>
+      </a>
+    </div>
+
+    <div class="col-9 align-self-center">
+      <h1 id="aboutme">About Me</h1>
+      <p>
+        I completed my Bachelor of Engineer (Reseach & Development) (Honours) and Bachelor of Science at ANU in 2018, majoring in Mechatronics and Mathematics respectively.
+        In 2017 I worked as a student intern at Data61 at CSIRO in Brisbane.
+        My engineering honours thesis, which I completed in 2017, looked at non-linear multi-agent system control theory using unit quaternions.
+      </p>
+      <p>
+        In October 2018 I commenced my PhD in non-linear observer theory under the supervision of Robert Mahony at the ANU.
+        In my PhD I am researching geometric observers for non-linear control problems, such as SLAM, with a focus on fast and computationally inexpensive implementations on mobile robots.
+        In this research, I am also looking at novel hardware options for implementing these systems.
+      </p>
+    </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <img src="resources/mugshot.jpg" class="img-thumbnail" alt="Profile Picture">
-        <div>Ph.D. Student</div>
-        <div><a href="http://www.anu.edu.au/">Australian National University</a></div>
-        <div><a href="https://cs.anu.edu.au/">College of Engineering and Computer Science</a></div>
-        <a href="mailto:pieter.vangoor@anu.edu.au">
-          <i class="fa fa-envelope-square" style="font-size:48px;color:green"></i>
-        </a>
-        <a href="https://github.com/pvangoor">
-          <i class="fa fa-github" style="font-size:48px;color:green"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/pieter-van-goor-372a93133/">
-          <i class="fa fa-linkedin" style="font-size:48px;color:green"></i>
-        </a>
-        <a href="https://scholar.google.com.au/citations?user=hwofM7MAAAAJ&hl=en&oi=sra">
-          <i class="material-icons" style="font-size:48px;color:green">school</i>
-        </a>
+  <hr>
 
-
-      </div>
-      <div class="col-9 align-self-center">
-        <h1>About Me</h1>
-        <p>
-          I completed my Bachelor of Engineer (Reseach & Development) (Honours) and Bachelor of Science at ANU in 2018, majoring in Mechatronics and Mathematics respectively.
-          In 2017 I worked as a student intern at Data61 at CSIRO in Brisbane.
-          My engineering honours thesis, which I completed in 2017, looked at non-linear multi-agent system control theory using unit quaternions.
-        </p>
-        <p>
-          In October 2018 I commenced my PhD in non-linear observer theory under the supervision of Robert Mahony at the ANU.
-          In my PhD I am researching geometric observers for non-linear control problems, such as SLAM, with a focus on fast and computationally inexpensive implementations on mobile robots.
-          In this research, I am also looking at novel hardware options for implementing these systems.
-        </p>
-        <h1>News</h1>
+  <div class="row">
+    <div class="col-12 align-self-center">
+      <h1 id="news">News</h1>
         <p>
           Recently, I released the code for my feature tracking library, GIFT.
           GIFT lets you specify camera parameters, and then it will detect and track features between subsequent images taken by that camera.
@@ -69,14 +95,95 @@
           I hope GIFT will be useful to others who need to work with tracked features.
           An example of the output from GIFT is now available on youtube.
         </p>
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QzIxh2eM1_s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe style="display: block; margin: auto;" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QzIxh2eM1_s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
-</div>
 
-<div class="container">
+  <hr>
+
+  <div class="row">
+    <div class="col-12 align-self-center">
+      <h1 id="publications">Publications</h1>
+      <table class="table">
+        <tr>
+          <td><img src="resources/paperImages/2019_vslam.png" class=paperImage></td>
+          <td>
+          <div class="paperTitle">
+            A Geometric Observer Design for Visual Localisation and Mapping
+          </div>
+          Pieter van Goor, Robert Mahony, Tarek Hamel and Jochen Trumpf.<br>
+          To Appear In 2019 IEEE 58th Conference on Decision and Control (CDC).<br>
+          <pre id="cdc2019a" class="paperCite" style="display: none;">
+@inproceedings{2019_vangoor_cdc_vslam,
+  title={Attitude and pose formation control for multiple 3D rigid bodies based on unit quaternion representation},
+  author={Pieter van Goor and Robert E. Mahony and Tarek Hamel and Jochen Trumpf},
+  booktitle={To appear in 2019 IEEE 58th Conference on Decision and Control (CDC)},
+  year={2019},
+  organization={IEEE}
+}
+          </pre>
+          [
+          Paper Coming Soon |
+          <a href="https://arxiv.org/pdf/1904.02452.pdf">preprint</a> |
+          <a href="#" onClick="toggleBlock('cdc2019a'); return false;">bib</a>
+          ]
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="resources/paperImages/2018_formation.png" class=paperImage></td>
+          <td>
+          <div class="paperTitle">
+            Attitude and pose formation control for multiple 3D rigid bodies based on unit quaternion representation
+          </div>
+          Pieter van Goor, Zhiyong Sun, and Changbin Yu.<br>
+          In 2018 37th Chinese Control Conference (CCC).<br>
+          <pre id="ccc2018" class="paperCite" style="display: none;">
+@inproceedings{2018_vangoor_ccc,
+  title={Attitude and pose formation control for multiple 3D rigid bodies based on unit quaternion representation},
+  author={van Goor, Pieter and Sun, Zhiyong and Yu, Changbin Brad},
+  booktitle={2018 37th Chinese Control Conference (CCC)},
+  pages={6505--6510},
+  year={2018},
+  organization={IEEE}
+}
+          </pre>
+          [
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8483010">paper</a> |
+          <a href="#" onClick="toggleBlock('ccc2018'); return false;">bib</a>
+          ]
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="resources/paperImages/2017_synchronization.png" class=paperImage></td>
+          <td>
+          <div class="paperTitle">
+            Attitude synchronization control for multi-agent systems on unit quaternions
+          </div>
+          Pieter van Goor, Zhiyong Sun, and Changbin Yu.<br>
+          In 2017 11th Asian Control Conference (ASCC).<br>
+          <pre id="ascc2017" class="paperCite" style="display: none;">
+@inproceedings{2017_vangoor_ascc,
+  title={Attitude synchronization control for multi-agent systems on unit quaternions},
+  author={van Goor, Pieter and Sun, Zhiyong and Yu, Changbin Brad},
+  booktitle={2017 11th Asian Control Conference (ASCC)},
+  pages={216--221},
+  year={2017},
+  organization={IEEE}
+}
+          </pre>
+          [
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8287169">paper</a> |
+          <a href="#" onClick="toggleBlock('ascc2017'); return false;">bib</a>
+          ]
+          </td>
+        </tr>
 
 
+      </table>
+    </div>
+  </div>
 
 </div>
 
