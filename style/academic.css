@@ -14,3 +14,8 @@
     color: #000000;
     background-color: #efefef;
 }
+
+.date {
+    /* width: 50px; */
+    font-weight: bold;
+}
