@@ -4,6 +4,7 @@
 
 .paperImage {
     width: 100px;
+    border:1px solid #021a40;
 }
 
 .paperCite {
@@ -18,4 +19,9 @@
 .date {
     /* width: 50px; */
     font-weight: bold;
+}
+
+table tr td.centeredCell {
+    text-align: center;
+    vertical-align: middle;
 }
