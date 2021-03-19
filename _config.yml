@@ -44,3 +44,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+scholar:
+  sort_by: year, month
+  order: descending

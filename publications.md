@@ -4,6 +4,8 @@ title: Publications
 permalink: /publications/
 ---
 
-These are the publications taken from the bib file.
+For all my latest publications, please visit my profile on [google scholar]({{site.scholar_url}}).
 
-{% bibliography --file test %}
+## Publications List
+
+{% bibliography --file my_pubs %}
