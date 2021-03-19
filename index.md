@@ -1,11 +1,11 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
+title: "Pieter van Goor - PhD Student"
 layout: home
 ---
 
-# About Me
+## About Me
 
 <!-- ![image](assets/mugshot.jpg =50px){: style="float: left"} -->
 
