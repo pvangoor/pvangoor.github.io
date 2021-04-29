@@ -18,3 +18,5 @@ My engineering honours thesis, which I completed in 2017, looked at non-linear m
 In October 2018 I commenced my PhD in non-linear observer theory under the supervision of Robert Mahony at the ANU.
 In my PhD I am researching geometric observers for non-linear control problems, such as SLAM, with a focus on fast and computationally inexpensive implementations on mobile robots.
 In this research, I am also looking at novel hardware options for implementing these systems.
+
+For a lift of my publications, please visit my [Google Scholar profile]({{site.scholar_url}}).
