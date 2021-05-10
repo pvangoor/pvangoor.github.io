@@ -2,7 +2,7 @@
 layout: post
 title:  "A New Paper Accepted at IFAC"
 date:   2020-06-01
-categories: paper ifac arxiv
+categories: Papers
 ---
 
 Our new paper "An Observer Design for Visual Simultaneous Localisation and Mapping with Output Equivariance" was accepted for publication at [IFAC 2020](https://www.ifac2020.org/) in February this year.

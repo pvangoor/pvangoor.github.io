@@ -2,7 +2,7 @@
 layout: post
 title:  "GIFT: General Invariant Feature Tracker"
 date:   2019-09-26
-categories: gift code youtube
+categories: Code
 ---
 
 Recently, I released the code for my feature tracking library, GIFT.

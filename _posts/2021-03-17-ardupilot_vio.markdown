@@ -2,7 +2,7 @@
 layout: post
 title:  "Ardupilot Conference Presentation: EqF VIO"
 date:   2021-03-17 16:38:21 +1100
-categories: vio eqf code ardupilot youtube
+categories: Talks
 ---
 Prof. Mahony and I gave a talk at the [ardupilot](https://ardupilot.org/) developer conference, discussing the Equivariant Filter for Visual Inertial Odometry.
 In the first half of the talk (until around 33min), Rob covers some of the theory and geometric concepts that are used to develop the filter.
