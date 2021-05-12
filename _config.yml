@@ -45,6 +45,5 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-scholar:
-  sort_by: year, month
-  order: descending
+# Google Analytics
+google_analytics: UA-169003792-1
