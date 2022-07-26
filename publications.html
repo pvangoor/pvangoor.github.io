@@ -4,29 +4,23 @@ permalink: /publications/
 title: Publications
 ---
 
+<h2 class="post-list-heading">Preprints</h2>
+
 <div id="archives">
-  {% assign pubs_by_year = site.publications | sort:"pub_date" | reverse %}
+  {% assign pub_list = site.publications | where: "pub_type", "preprint" | sort:"pub_date" | reverse %}
+  {% include pub_table.html%}
+</div>
 
-  <table>
-    {% tablerow item in pubs_by_year cols:1%}
-    <div class="archive-group">
+<h2 class="post-list-heading">Journal Publications</h2>
 
-      <a href="{{ item.url | relative_url }}">
-        {% assign temp = item.authors.size | minus: 1 %}
-        {% for author in item.authors limit: temp %}
-        {{ author }},
-        {% endfor %}
-        and {{item.authors[temp]}}.
+<div id="archives">
+  {% assign pub_list = site.publications | where: "pub_type", "journal" | sort:"pub_date" | reverse %}
+  {% include pub_table.html%}
+</div>
 
-        "{{ item.title | escape }}"
+<h2 class="post-list-heading">Conference Publications</h2>
 
-        <i>{{item.venue}}</i>.
-
-        {{item.pub_date}}
-
-      </a>
-
-    </div>
-    {% endtablerow %}
-  </table>
+<div id="archives">
+  {% assign pub_list = site.publications | where: "pub_type", "conference" | sort:"pub_date" | reverse %}
+  {% include pub_table.html%}
 </div>
