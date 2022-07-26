@@ -2,7 +2,7 @@
 layout: post
 title:  "EqVIO Paper and Code"
 date:   2022-05-05
-categories: Papers, Code
+categories: [Papers, Code]
 ---
 
 Our [latest research on equivariant filtering](https://arxiv.org/abs/2205.01980) for VIO is now publicly available on arxiv.

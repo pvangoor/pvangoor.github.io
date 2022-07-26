@@ -1,0 +1,22 @@
+<table>
+{% tablerow item in pub_list cols:1%}
+<div class="archive-group">
+
+    <a href="{{ item.url | relative_url }}">
+    {% assign temp = item.authors.size | minus: 1 %}
+    {% for author in item.authors limit: temp %}
+    {{ author }},
+    {% endfor %}
+    and {{item.authors[temp]}}.
+
+    "{{ item.title | escape }}"
+
+    <i>{{item.venue}}</i>.
+
+    {{item.pub_date}}
+
+    </a>
+
+</div>
+{% endtablerow %}
+</table>
