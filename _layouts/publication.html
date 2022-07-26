@@ -8,6 +8,7 @@ layout: default
   </a>
 </h1>
 
+<div class="post-header">
 <h2>
   <!-- Author list -->
   {% assign temp = page.authors.size | minus: 1 %}
@@ -20,7 +21,10 @@ layout: default
 {% if page.venue %}
 <i>{{page.venue}}</i>, {{page.pub_date}}
 {% endif %}
+</div>
 
-<h3>Abstract</h3>
+
+
+<h2>Abstract</h2>
 
 {{ content }}
