@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<h1 class="page-heading">
+  <a href="{{ page.link }}">
+    {{ page.title | escape }}
+  </a>
+</h1>
+
+<h2>
+  <!-- Author list -->
+  {% assign temp = page.authors.size | minus: 1 %}
+  {% for author in page.authors limit: temp %}
+    {{ author }}, 
+  {% endfor %}
+  and {{page.authors[temp]}}
+</h2>
+
+{% if page.venue %}
+<i>{{page.venue}}</i>, {{page.pub_date}}
+{% endif %}
+
+<h3>Abstract</h3>
+
+{{ content }}

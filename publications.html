@@ -1,0 +1,32 @@
+---
+layout: page
+permalink: /publications/
+title: Publications
+---
+
+<div id="archives">
+  {% assign pubs_by_year = site.publications | sort:"pub_date" | reverse %}
+
+  <table>
+    {% tablerow item in pubs_by_year cols:1%}
+    <div class="archive-group">
+
+      <a href="{{ item.url | relative_url }}">
+        {% assign temp = item.authors.size | minus: 1 %}
+        {% for author in item.authors limit: temp %}
+        {{ author }},
+        {% endfor %}
+        and {{item.authors[temp]}}.
+
+        "{{ item.title | escape }}"
+
+        <i>{{item.venue}}</i>.
+
+        {{item.pub_date}}
+
+      </a>
+
+    </div>
+    {% endtablerow %}
+  </table>
+</div>

@@ -1,0 +1,10 @@
+---
+layout: publication
+title: An equivariant filter for visual inertial odometry
+authors: [Pieter van Goor, Robert Mahony]
+venue: 2021 IEEE International Conference on Robotics and Automation (ICRA)
+pub_date: 2021
+link: https://ieeexplore.ieee.org/abstract/document/9561769
+---
+
+Visual Inertial Odometry (VIO) is of great interest due the ubiquity of devices equipped with both a monocular camera and Inertial Measurement Unit (IMU). Methods based on the extended Kalman Filter remain popular in VIO due to their low memory requirements, CPU usage, and processing time when compared to optimisation-based methods. In this paper, we analyse the VIO problem from a geometric perspective and propose a novel formulation on a smooth quotient manifold where the equivalence relationship is the well-known invariance of VIO to choice of reference frame. We propose a novel Lie group that acts transitively on this manifold and is compatible with the visual measurements. This structure allows for the application of Equivariant Filter (EqF) design leading to a novel filter for the VIO problem. Combined with a very simple vision processing front-end, the proposed filter demonstrates state-of-the-art performance on the EuRoC dataset compared to other EKF-based VIO algorithms.
