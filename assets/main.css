@@ -1,7 +1,7 @@
 /* Define colours */
 :root {
-  --accent: #fcff82;
-  --accent-text:#1a6c21;
+  --accent: #feffb9;
+  --accent-line:#a8e6cf;
 }
 
 /** Reset some basic elements */
@@ -128,7 +128,7 @@ background-color: var(--accent);}
 /** Posts */
 .post-header { margin-bottom: 30px; margin-top:30px;}
 
-.accent-rule { margin-top: 2px; margin-bottom: 8px; background-color: var(--accent); height: 8px; border: none;}
+.accent-rule { margin-top: 2px; margin-bottom: 30px; background-color: var(--accent-line); height: 20px; border: none;}
 
 .post-title { font-size: 42px; letter-spacing: -1px; line-height: 1; }
 @media screen and (max-width: 800px) { .post-title { font-size: 36px; } }
