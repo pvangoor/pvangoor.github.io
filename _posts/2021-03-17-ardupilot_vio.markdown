@@ -10,6 +10,8 @@ In the second half, I describe the technical challenges in taking our research c
 
 <iframe style="display: block; margin: auto;" width="560" height="315" src="https://www.youtube.com/embed/vLZdBKRjRi4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br>
+
 I would like to thank Tridge and the other ardupilot developers for the opportunity to give this talk.
 I would also like to thank the ardupilot community for their friendly engagement with us during the questions and afterwards via private emails.
 

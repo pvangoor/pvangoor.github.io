@@ -13,8 +13,12 @@ Have a look at the following videos to see the system working on `V2_03_difficul
 <!-- EuRoC video -->
 <iframe style="display: block; margin: auto;" width="560" height="315" src="https://www.youtube.com/embed/5y9vs0QASVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br>
+
 <!-- UZH FPV video -->
 <iframe style="display: block; margin: auto;" width="560" height="315" src="https://www.youtube.com/embed/8VfhjTl7kPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br>
 
 ### Abstract
 
