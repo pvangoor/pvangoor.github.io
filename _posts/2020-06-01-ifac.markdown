@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "A New Paper Accepted at IFAC"
+date:   2020-06-01
+categories: Papers
+---
+
+Our new paper "An Observer Design for Visual Simultaneous Localisation and Mapping with Output Equivariance" was accepted for publication at [IFAC 2020](https://www.ifac2020.org/) in February this year.
+The [preprint version](https://arxiv.org/abs/2005.14347) is now on arxiv.
+Thank you to my co-authors and supervisors Robert Mahony, Tarek Hamel, and Jochen Trumpf.

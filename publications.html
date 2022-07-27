@@ -1,0 +1,26 @@
+---
+layout: page
+permalink: /publications/
+title: Publications
+---
+
+<h2 class="post-list-heading">Preprints</h2>
+
+<div id="archives">
+  {% assign pub_list = site.publications | where: "pub_type", "preprint" | sort:"pub_date" | reverse %}
+  {% include pub_table.html%}
+</div>
+
+<h2 class="post-list-heading">Journal Publications</h2>
+
+<div id="archives">
+  {% assign pub_list = site.publications | where: "pub_type", "journal" | sort:"pub_date" | reverse %}
+  {% include pub_table.html%}
+</div>
+
+<h2 class="post-list-heading">Conference Publications</h2>
+
+<div id="archives">
+  {% assign pub_list = site.publications | where: "pub_type", "conference" | sort:"pub_date" | reverse %}
+  {% include pub_table.html%}
+</div>
