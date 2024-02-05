@@ -4,7 +4,7 @@ title: Equivariant Observers for Second Order Systems on Matrix Lie Groups
 authors: [Yonhon Ng, Pieter Van Goor, Tarek Hamel, Robert Mahony]
 link: https://ieeexplore.ieee.org/abstract/document/9772385/
 venue: IEEE Transactions on Automatic Control
-pub_date: 2022
+pub_date: 2023
 pub_type: journal
 ---
 
