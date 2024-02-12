@@ -2,7 +2,7 @@
 layout: post
 title:  "The Lie-Theoretic Exponential is Not Surjective in General"
 date:   2022-07-26
-categories: 
+categories: Mathematics
 ---
 
 {% include math.html %}

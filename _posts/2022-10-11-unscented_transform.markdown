@@ -2,7 +2,7 @@
 layout: post
 title:  "The Unscented Transform"
 date:   2022-10-11
-categories: 
+categories: Mathematics
 ---
 
 {% include math.html %}
