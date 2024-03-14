@@ -330,22 +330,23 @@ Observe that $(I_2 - R(\omega) ) (I_2 - R(-\omega) ) = 2(1-\cos(\omega))I_2$. Th
 $$\begin{aligned}
 v &= \omega R(-\pi/2) (I_2 - R(\omega) )^{-1} p \\
 &= \omega R(-\pi/2) \frac{(I_2 - R(-\omega) )}{2 (1-\cos(\omega))} p \\
-&= \omega \frac{I_2 - R(-\omega) }{2 (1-\cos(\omega))} R(-\pi/2) p \\
-&= \omega \begin{pmatrix}
-    1- \cos(-\omega) & \sin(-\omega) \\ -\sin(-\omega) & 1-\cos(-\omega)
-\end{pmatrix}(2 (1-\cos(\omega)))^{-1} R(-\pi/2) p \\
-&= \frac{\omega}{2} \begin{pmatrix}
-    1 & \frac{-\sin(\omega)}{1-\cos(\omega)} \\ \frac{\sin(\omega)}{1-\cos(\omega)} & 1
-\end{pmatrix} R(-\pi/2) p \\
+&= \frac{\omega}{2 (1-\cos(\omega))} (I_2 - R(-\omega)) R(-\pi/2) p \\
 \end{aligned}$$
 
-
-
-
-
-
-
-
+In summary,
 
 $$\begin{aligned}
+X &= \begin{pmatrix}
+    R & p \\ 0_{1\times 2} & 1
+\end{pmatrix}, \qquad
+\log(X) = \begin{pmatrix}
+    \omega^\times & v \\ 0_{1\times 2} & 0
+\end{pmatrix}, \\
+\omega &:= \mathrm{atan2}(R_{2,1}, R_{1,1}) = \mathrm{atan2}(\sin(\theta), \cos(\theta)), \\
+v &:= \frac{\omega}{2 (1-\cos(\omega))} (I_2 - R(-\omega)) R(-\pi/2) p
 \end{aligned}$$
+
+### Conclusion
+
+The formulas presented in this summary are intended to be useful and practical for implementation, which is what I have done in the pylie library.
+I hope you find it helpful too, and please let me know if you find any issues or mistakes, or have suggestions for improvement!
