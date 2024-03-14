@@ -16,7 +16,7 @@ $$\begin{aligned}
     \mathbf{SE}(n) = \left\{
         X = \begin{pmatrix}
             R & p \\ 0_{1 \times n} & 1
-        \end{pmatrix} \in \R^{n+1 \times n+1}
+        \end{pmatrix} \in \mathbb{R}^{n+1 \times n+1}
         \; \middle| \;
         R^\top R = I_n, \;
         \det(R) = 1, \;
@@ -32,7 +32,7 @@ $$\begin{aligned}
     \mathbf{SE}(2) &:= \left\{
         X = \begin{pmatrix}
             R(\theta) & p \\ 0_{1 \times 2} & 1
-        \end{pmatrix} \in \R^{3\times 3}
+        \end{pmatrix} \in \mathbb{R}^{3\times 3}
         \; \middle| \;
         \theta \in (\pi,\pi], \;
         p \in \mathbb{R}^2
@@ -108,9 +108,9 @@ $$\begin{aligned}
     &= \left\{
         U = \begin{pmatrix}
             \omega^\times & v \\ 0_{1 \times 2} & 0
-        \end{pmatrix} \in \R^{3\times 3}
+        \end{pmatrix} \in \mathbb{R}^{3\times 3}
         \; \middle| \;
-        \omega \in \R, \;
+        \omega \in \mathbb{R}, \;
         v \in \mathbb{R}^2
     \right\}, \\
     \omega^\times &:=
@@ -121,10 +121,10 @@ $$\begin{aligned}
 \end{aligned}$$
 
 The notation $\omega^\times$ is a very useful one.
-The operator $\cdot^\times : \R \to \R^{2\times 2}$ is linear, so $(\omega_1 + \omega_2)^\times = \omega_1^\times + \omega_2^\times$ and, in particular, $\omega^\times = \omega 1^\times$.
+The operator $\cdot^\times : \mathbb{R} \to \mathbb{R}^{2\times 2}$ is linear, so $(\omega_1 + \omega_2)^\times = \omega_1^\times + \omega_2^\times$ and, in particular, $\omega^\times = \omega 1^\times$.
 This is a particularly nice feature since $1^\times = R(\pi/2)$.
 
-The Lie algebra $\mathfrak{se}(2)$ is a vector space by definition, and we can relate it to $\R^3$ by choosing a basis, or simply by defining a "wedge" map $\cdot^\wedge : \R^3 \to \mathfrak{se}(2)$.
+The Lie algebra $\mathfrak{se}(2)$ is a vector space by definition, and we can relate it to $\mathbb{R}^3$ by choosing a basis, or simply by defining a "wedge" map $\cdot^\wedge : \mathbb{R}^3 \to \mathfrak{se}(2)$.
 This map is required to be an isomorphism in the vector space sense, so it must be linear and invertible.
 We choose the wedge map and its inverse, the vee map, to be
 
@@ -145,7 +145,7 @@ $$\begin{aligned}
     \end{pmatrix},
 \end{aligned}$$
 
-where $\omega \in \R$ and $v \in \R^3$.
+where $\omega \in \mathbb{R}$ and $v \in \mathbb{R}^2$.
 In other words, we define a basis of $\mathfrak{se}(2)$ by
 $$\begin{aligned}
     E_1 &:= \begin{pmatrix}
@@ -161,7 +161,7 @@ $$\begin{aligned}
         0_{1\times 2} & 0
     \end{pmatrix},
 \end{aligned}$$
-where $\mathbf{e}_1, \mathbf{e}_2 \in \R^2$ are the standard basis vectors.
+where $\mathbf{e}_1, \mathbf{e}_2 \in \mathbb{R}^2$ are the standard basis vectors.
 
 #### Adjoint and Lie bracket
 
@@ -177,7 +177,7 @@ $$\begin{aligned}
     \end{pmatrix}.
 \end{aligned}$$
 
-We obtain a matrix expression for $\mathrm{Ad}_X$ by using the wedge and vee isomorphisms. Specifically, for any linear operator $L : \mathfrak{se}(2) \to \mathfrak{se}(2)$, we may define $L^\vee \in \R^{3\times 3}$ to be the matrix such that $L^\vee u = L(u^\wedge)^\vee$ for all $u \in \R^3$.
+We obtain a matrix expression for $\mathrm{Ad}_X$ by using the wedge and vee isomorphisms. Specifically, for any linear operator $L : \mathfrak{se}(2) \to \mathfrak{se}(2)$, we may define $L^\vee \in \mathbb{R}^{3\times 3}$ to be the matrix such that $L^\vee u = L(u^\wedge)^\vee$ for all $u \in \mathbb{R}^3$.
 From this definition, we obtain the Adjoint matrix
 
 $$\begin{aligned}
@@ -316,7 +316,7 @@ R(\theta) &= R(\omega), &
 p &= \frac{I_2 - R(\omega)}{\omega} 1^\times v.
 \end{aligned}$$
 
-The first term is solved by $\omega = \theta + 2k \pi$ for any $k \in \N$, so we choose $\omega \in [-\pi, \pi)$ as the standard solution.
+The first term is solved by $\omega = \theta + 2k \pi$ for any $k \in \mathbb{N}$, so we choose $\omega \in [-\pi, \pi)$ as the standard solution.
 The second term is then given by solving
 
 $$\begin{aligned}
