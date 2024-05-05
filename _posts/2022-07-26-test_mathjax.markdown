@@ -65,13 +65,17 @@ $$
     &= \left( \sum_{k=0}^\infty \frac{1}{(2k)!} A^{2k} \right) + \left( \sum_{k=0}^\infty \frac{1}{(2k+1)!} A^{2k+1} \right), \\
     &= \left( \sum_{k=0}^\infty \frac{1}{(2k)!} (a^2 + bc)^k I_2 \right) + \left( \sum_{k=0}^\infty \frac{1}{(2k+1)!} (a^2 + bc)^k A \right), \\
     &= \left( \sum_{k=0}^\infty \frac{(\sqrt{a^2 + bc})^{2k}}{(2k)!}  I_2 \right) + \left( \sum_{k=0}^\infty \frac{(\sqrt{a^2 + bc})^{2k}}{(2k+1)!} A \right), \\
-    &= \cosh(\sqrt{a^2 + bc})  I_2 +\sinh(\sqrt{a^2 + bc}) A.
+    &= \left( \sum_{k=0}^\infty \frac{(\sqrt{a^2 + bc})^{2k}}{(2k)!}  I_2 \right) + \frac{1}{\sqrt{a^2 + bc}}\left( \sum_{k=0}^\infty \frac{(\sqrt{a^2 + bc})^{2k+1}}{(2k+1)!} A \right), \\
+    &= \cosh(\sqrt{a^2 + bc})  I_2 + \frac{\sinh(\sqrt{a^2 + bc})}{\sqrt{a^2 + bc}} A.
 \end{aligned}
 $$
 
 Isn't that interesting!
 If you're not sure where the hyperbolic sin and cos functions came from, have a look at their [series expansions](https://en.wikipedia.org/wiki/Hyperbolic_functions#Taylor_series_expressions).
 From here, let $\theta = \sqrt{a^2 + bc}$.
+Formally, the expression $\frac{\sinh(\theta)}{\theta}$ is only valid for $\theta \neq 0$.
+However, to simplify the infinite series we will use the expression as if $\theta \neq 0$, and at the point $\theta = 0$ replace the undefined value of $\frac{\sinh(\theta)}{\theta}$ with its limit as $\theta \to 0$.
+This is given by $\lim_{\theta \to 0}\frac{\sinh(\theta)}{\theta} = 1$.
 Then,
 
 $$
@@ -79,21 +83,29 @@ $$
     \exp(A)
     &= \cosh(\theta)  I_2 +\sinh(\theta) A, \\
     &= \begin{pmatrix} \cosh(\theta) & 0 \\ 0 & \cosh(\theta) \end{pmatrix}
-    + \begin{pmatrix} \sinh(\theta) a & \sinh(\theta) b \\ \sinh(\theta) c & -\sinh(\theta) a \end{pmatrix} , \\
-    &= \begin{pmatrix} \cosh(\theta) + \sinh(\theta) a & \sinh(\theta) b \\ \sinh(\theta) c & \cosh(\theta)-\sinh(\theta) a \end{pmatrix}.
+    + \begin{pmatrix} \frac{\sinh(\theta)}{\theta} a & \frac{\sinh(\theta)}{\theta} b \\ \frac{\sinh(\theta)}{\theta} c & -\frac{\sinh(\theta)}{\theta} a \end{pmatrix} , \\
+    &= \begin{pmatrix} \cosh(\theta) + \frac{\sinh(\theta)}{\theta} a & \frac{\sinh(\theta)}{\theta} b \\ \frac{\sinh(\theta)}{\theta} c & \cosh(\theta)-\frac{\sinh(\theta)}{\theta} a \end{pmatrix}.
 \end{aligned}
 $$
 
 
-In order for this to be the matrix $H$ we considered at the start, we require that 
+In order for this to be the matrix $H$ we considered at the start, we require that the '1,1' and '2,2' entries are equal to -1 (and therefore each other).
 
-$$\cosh(\theta) + \sinh(\theta) a = \cosh(\theta) - \sinh(\theta) a = -1$$
+$$\cosh(\theta) + \frac{\sinh(\theta)}{\theta} a = -1 = \cosh(\theta) - \frac{\sinh(\theta)}{\theta} a$$
 
-Therefore either $\sinh(\theta) = 0$ or $a = 0$.
-The first case is impossible because we also require that $ \sinh(\theta) b = 1 $ for the top-right cell, so this cannot be.
-In the second case $a = 0$, but looking at the bottom-left cell $ \sinh(\theta) c = 0$ so then $c = 0$ as well.
-But if $c = 0$ and $a = 0$, then $\theta = \sqrt{0^2 + 0b} = 0$, and we have $\sinh(\theta) = 0$ again!
-Therefore, neither case is possible, and we arrive at a contradiction: there is no choice of $a,b,c \in \mathbb{R}$ such that $\exp(A) = H$.
+Therefore either $\frac{\sinh(\theta)}{\theta} = 0$ or $a = 0$.
+
+The first case $\frac{\sinh(\theta)}{\theta} = 0$ is impossible.
+This is because the only value of $\theta$ for which $\sinh(\theta) = 0$ is $\theta = 0$, but as discussed $\lim_{\theta \to 0}\frac{\sinh(\theta)}{\theta} = 1$.
+In other words, the numerator is never zero outside of the limit case, where the whole fraction evaluates to $1$.
+Therefore the fraction $\frac{\sinh(\theta)}{\theta}$ can never be zero.
+
+Now consider the second case $a = 0$.
+From the bottom-left '2,1' cell, we require that $\frac{\sinh(\theta)}{\theta} c = 0$. Since $\frac{\sinh(\theta)}{\theta}$ cannot be zero (see the first case), it must be that $c = 0$.
+Now, since $c = 0$ and $a = 0$, then $\theta = \sqrt{0^2 + 0b} = 0$.
+But this means that $\cosh(\theta) = \cosh(0) = 1$, and thus the '1,1' and '2,2' cells are not equal to $-1$.
+
+In summary, neither case is possible, since assuming either case to be true leads to a contradiction. It follows that there is no choice of $a,b,c \in \mathbb{R}$ such that $\exp(A) = H$.
 
 ### Conclusion
 
