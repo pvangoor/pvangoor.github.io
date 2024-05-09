@@ -342,7 +342,7 @@ X &= \begin{pmatrix}
 \log(X) = \begin{pmatrix}
     \omega^\times & v \\ 0_{1\times 2} & 0
 \end{pmatrix}, \\
-\omega &:= \mathrm{atan2}(R_{2,1}, R_{1,1}) = \mathrm{atan2}(\sin(\theta), \cos(\theta)), \\
+\omega &:= \mathrm{atan2}(R_{2,1}, R_{1,1}) = \mathrm{atan2}(\sin(\theta), \cos(\theta)) = \theta, \\
 v &:= \frac{\omega}{2 (1-\cos(\omega))} (I_2 - R(-\omega)) R(-\pi/2) p
 \end{aligned}$$
 
