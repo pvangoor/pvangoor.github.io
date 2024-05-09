@@ -239,7 +239,7 @@ $$\begin{aligned}
 \sinh(x) &= -i\sin(ix), &
 \cosh(x) &= \cos(ix)
 \end{aligned}$$
-for all $x \in \R$.
+for all $x \in \mathbb{R}$.
 Suppose that $\theta < 0$. Then,
 
 $$
