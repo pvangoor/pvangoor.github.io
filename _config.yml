@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Pieter van Goor
-email: pieter.vangoor@anu.edu.au
+email: p.c.h.vangoor@utwente.nl
 description: >- # this means to ignore newlines until "baseurl:"
   This is my personal website I use for hosting news and updates regarding my research.
   If you want to contact me, please reach out by email or any of my linked social media.
