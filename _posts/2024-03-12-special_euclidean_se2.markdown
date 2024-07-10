@@ -348,5 +348,5 @@ v &:= \frac{\omega}{2 (1-\cos(\omega))} (I_2 - R(-\omega)) R(-\pi/2) p
 
 ### Conclusion
 
-The formulas presented in this summary are intended to be useful and practical for implementation, which is what I have done in the pylie library.
+The formulas presented in this summary are intended to be useful and practical for implementation, which is what I have done in the [pylie](https://github.com/pvangoor/pylie) library.
 I hope you find it helpful too, and please let me know if you find any issues or mistakes, or have suggestions for improvement!

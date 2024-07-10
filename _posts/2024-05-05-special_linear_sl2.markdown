@@ -34,7 +34,7 @@ $$\begin{aligned}
     \right\}.
 \end{aligned}$$
 
-The group properties are easily verified. The identity is $I_2 \in \mathbf{SE}(2)$ and the product and inverse are just the matrix product and inverse, which satisfy
+The group properties are easily verified. The identity is $I_2 \in \mathbf{SL}(2)$ and the product and inverse are just the matrix product and inverse, which satisfy
 
 $$\begin{aligned}
     \det(H_1 H_2) &= \det(H_1) \det(H_2) = 1, \\
@@ -111,7 +111,7 @@ $$\begin{aligned}
     \right\}.
 \end{aligned}$$
 
-This Lie algebra is a vector space just like any other Lie algebra, and we can relate it to $\mathbb{R}^3$ by choosing a basis, or equivalently by defining a "wedge" map $\cdot^\wedge : \mathbb{R}^3 \to \mathfrak{se}(2)$.
+This Lie algebra is a vector space just like any other Lie algebra, and we can relate it to $\mathbb{R}^3$ by choosing a basis, or equivalently by defining a "wedge" map $\cdot^\wedge : \mathbb{R}^3 \to \mathfrak{sl}(2)$.
 This map is required to be an isomorphism in the vector space sense, so it must be linear and invertible.
 We have already suggested the wedge map in our definition of the Lie algebra, but formally,
 
@@ -125,7 +125,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 and the 'vee' map $\cdot^\vee : \mathfrak{sl}(2) \to \mathbb{R}^3$ is simply the inverse.
-This choice defines a basis of $\mathfrak{se}(2)$ by
+This choice defines a basis of $\mathfrak{sl}(2)$ by
 $$\begin{aligned}
     E_1 &:= \begin{pmatrix}
         1 & 0 \\ 0 & -1
@@ -208,7 +208,7 @@ $$\begin{aligned}
 
 The exponential is given by the matrix exponential.
 This, by definition, involves an infinite power series, but we will try to 'hide' this inside some standard functions (in this case, $\sinh$ and $\cosh$).
-Let $U \in \mathfrak{se}(2)$. 
+Let $U \in \mathfrak{sl}(2)$. 
 Following the steps in my previous post on the why the Lie exponential is not surjective, we obtain
 
 $$
@@ -335,5 +335,5 @@ $$
 
 The special linear group comes up far less in robotics than the quaternions or the special euclidean group.
 However, it does have some beautiful formulas, and the exercise of working them out is never a wasted effort.
-The formulas here have all been implemented in pylie, so I hope people find them helpful.
+The formulas here have all been implemented in [pylie](https://github.com/pvangoor/pylie), so I hope people find them helpful.
 As always, please let me know if you have any suggestions for improvement!
