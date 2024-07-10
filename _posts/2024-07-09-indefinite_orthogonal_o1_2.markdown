@@ -42,12 +42,15 @@ $$\begin{aligned}
 \end{aligned}$$
 
 It is useful to dissect the definition of the Lie group a bit. Let
+
 $$\begin{aligned}
     L =  \begin{pmatrix} d & b^\top \\ c & A \end{pmatrix} 
     \in \mathbf{O}(1,2) \subset \mathbb{R}^{3\times 3},
 \end{aligned}$$
-where $A \in \R^{2\times 2}$ is the lower right block, $d \in \R$, and $b,c \in \R^2$.
+
+where $A \in \mathbb{R}^{2\times 2}$ is the lower right block, $d \in \mathbb{R}$, and $b,c \in \mathbb{R}^2$.
 Then, by the definition of the group,
+
 $$\begin{aligned}
     g &= L^\top g L \\
     % -------
@@ -65,7 +68,9 @@ $$\begin{aligned}
     b b^\top - A^\top A
     \end{pmatrix}.
 \end{aligned}$$
+
 This leads to three equations,
+
 $$\begin{aligned}
     d^2 - c^\top c &= 1, &
     A^\top c &= d b, &
@@ -79,10 +84,12 @@ $$\begin{aligned}
     c &= d A^{-\top} b, &
     &
 \end{aligned}$$
+
 For compactness of notation, it is not always useful to write out matrix $L$ into these components, but the relationships are important for simplification of later formulas.
 
 We will use these relations to compute the inverse of the matrix.
 The formula for the inverse of a $2\times 2$ block matrix gives
+
 $$\begin{aligned}
     L^{-1} = \begin{pmatrix} d & b^\top \\ c & A \end{pmatrix}^{-1}
     &= \begin{pmatrix} d^{-1} + d^{-2} b^\top S^{-1} c &
@@ -90,17 +97,21 @@ $$\begin{aligned}
     -d^{-1} S^{-1} c & S^{-1} \end{pmatrix}, &
     S &:= A - d^{-1} c b^\top
 \end{aligned}$$
+
 Since the inverse of $L$ also belongs to $\mathbf{O}(1,2)$, we only need to compute the upper- and lower-left terms. The remaining terms are determined by the relationships outlined above.
 For the matrix $S$, we have
+
 $$\begin{aligned}
     S &= A - d^{-1} c b^\top \\
     &= A - A^{-\top} b b^\top \\
     &= A - A^{-\top} (A^\top A - I_2) \\
     &= A^{-\top}
 \end{aligned}$$
+
 Thus $S^{-1} = A^\top$.
 This is a nice simplification and helps to compute the remaining terms.
 For the top-left term,
+
 $$\begin{aligned}
     d^{-1} + d^{-2} b^\top S^{-1} c
     &= d^{-1} + d^{-2} b^\top A^\top c \\
@@ -108,13 +119,16 @@ $$\begin{aligned}
     &= d^{-1} (1 + b^\top b) \\
     &= d
 \end{aligned}$$
+
 For the bottom-left term,
+
 $$\begin{aligned}
     - d^{-1} S^{-1} c
     &= - d^{-1} A^\top c = -b.
 \end{aligned}$$
 Then by the fact that $(L^{-1})^{-1} = L$, the top-right term must be $-c^\top$.
 In summary, the inverse of $L$ is can be greatly simplified from a general $3\times 3$ matrix inverse to
+
 $$\begin{aligned}
     L^{-1} &= \begin{pmatrix} d & b^\top \\ c & A \end{pmatrix}^{-1}
     = \begin{pmatrix} d & -c^\top \\ -b & A^\top \end{pmatrix}
@@ -149,14 +163,18 @@ $$\begin{aligned}
     + \begin{pmatrix} U_{11} & U_{12} \\ -U_{21} & -U_{22} \end{pmatrix} \\
     &= \begin{pmatrix} 2 U_{11} & U_{12} - U_{21}^\top \\ U_{12}^\top - U_{21} & -U_{22}-U_{22}^\top \end{pmatrix},
 \end{aligned}$$
+
 where $U_{11} \in \mathbb{R}$, $U_{12} \in \mathbb{R}^{2\times 1}\simeq \mathbb{R}^2$, $U_{21} \in \mathbb{R}^{1\times 2}$, and $U_{22} \in \mathbb{R}^{2\times 2}$.
 It follows that
+
 $$\begin{aligned}
     U_{11} &= 0 &
     U_{21} &= U_{12}^\top \in \mathbb{R}^2& 
     U_{22} = - U_{22}^\top \in \mathfrak{so}(2)
 \end{aligned}$$
+
 In other words, there are three degrees of freedom, and we define the basis of $\mathfrak{o}(1,2)$ to be
+
 $$\begin{aligned}
     E_1 &:= \begin{pmatrix}
         0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0
@@ -170,18 +188,22 @@ $$\begin{aligned}
 \end{aligned}$$
 
 For convenience, we will also adopt the notation 
+
 $$\omega^\times = \begin{pmatrix}
         0 & -\omega \\ \omega & 0
 \end{pmatrix}$$
+
 for any $\omega \in \mathbb{R}$.
-Then we may write the wedge map $\cdot^\wedge : \R^3 \to \mathfrak{o}(1,2)$ as
+Then we may write the wedge map $\cdot^\wedge : \mathbb{R}^3 \to \mathfrak{o}(1,2)$ as
+
 $$\begin{aligned}
         \begin{pmatrix}
         \omega \\ u_1 \\ u_2
     \end{pmatrix}^\wedge &:= \omega E_1 + u_1 E_2 + u_2 E_3
-    = \begin{pmatrix} 0 & u^\top \\ u & \omega^\times \end{pmatrix} \in \R^{3\times 3},
+    = \begin{pmatrix} 0 & u^\top \\ u & \omega^\times \end{pmatrix} \in \mathbb{R}^{3\times 3},
 \end{aligned}$$
-where $u = (u_1,u_2) \in \R^2$.
+
+where $u = (u_1,u_2) \in \mathbb{R}^2$.
 
 The inverse of the wedge map is the 'vee' map $\cdot^\vee : \mathfrak{o}(1,2) \to \mathbb{R}^3$.
 
@@ -285,6 +307,7 @@ $$
     &= -s^3 + s(u_1^2 + u_2^2 -\omega^2).
 \end{aligned}
 $$
+
 From here, we can apply the Caley-Hamilton theorem, which says that every matrix satisfies its own characteristic equation. In other words,
 
 $$
@@ -313,7 +336,6 @@ $$
 for all $k =1,2,3,\ldots$.
 We are now ready to derive the exponential formula.
 We have
-
 
 $$
 \begin{aligned}
@@ -378,7 +400,9 @@ L &= \exp(U), \\
 + t_2 \begin{pmatrix} u^\top u & u^\top \omega^\times \\ \omega^\times u & u u^\top + (\omega^\times)^2 \end{pmatrix}.
 \end{aligned}
 $$
+
 Taking the symmetric projection of both sides, i.e. mapping $M \mapsto \frac{1}{2} (M + M^\top)$ yields
+
 $$
 \begin{aligned}
 \frac{1}{2}\begin{pmatrix} d & (b+c)^\top \\ b+c & A+A^\top \end{pmatrix}
@@ -387,7 +411,9 @@ $$
 + t_2 \begin{pmatrix} u^\top u & 0_{1\times 2} \\ 0_{2\times 1} & u u^\top + (\omega^\times)^2 \end{pmatrix}.
 \end{aligned}
 $$
+
 Likewise, taking the antisymmetric projection $M \mapsto \frac{1}{2} (M - M^\top)$ yields
+
 $$
 \begin{aligned}
 \frac{1}{2}\begin{pmatrix} 0 & (b-c)^\top \\ c-b & A-A^\top \end{pmatrix}
@@ -395,14 +421,18 @@ $$
 + t_2 \begin{pmatrix} 0 & u^\top \omega^\times \\ \omega^\times u & 0_{2\times 2} \end{pmatrix}.
 \end{aligned}
 $$
+
 Extracting the bottom-left component of the symmetric projection equation, we can derive
+
 $$
 \begin{aligned}
 \frac{1}{2}(b+c) &= t_1 u, \\
 \left\vert \frac{b+c}{2} \right\vert^2  &= \vert u \vert^2 t_1^2.
 \end{aligned}
 $$
+
 Extracting the bottom-right component of the antisymmetric projection equation, we also have
+
 $$
 \begin{aligned}
 \frac{1}{2}(A-A^\top) &= t_1 \omega^\times, \\
@@ -411,7 +441,9 @@ $$
 \frac{1}{4}( A_{12} - A_{21} )^2 &= t_1^2 \omega^2, \\
 \end{aligned}
 $$
+
 Recall now that $q^2 = \vert u \vert^2 - \omega^2$, so combing these equations we have
+
 $$
 \begin{aligned}
 \left\vert \frac{b+c}{2} \right\vert^2 - \frac{1}{4}( A_{12} - A_{21} )^2 
@@ -420,13 +452,17 @@ $$
 = \sinh(q)^2.
 \end{aligned}
 $$
+
 This now leads us to a solution for $q$. If we allow $q$ to be imaginary then
+
 $$
 \begin{aligned}
 q = \sinh^{-1}\left( \sqrt{ \left\vert \frac{b+c}{2} \right\vert^2 - \frac{1}{4}( A_{12} - A_{21} )^2 } \right)
 \end{aligned}
 $$
+
 If we do not want to use imaginary numbers, then we need to consider the case that the left-hand side is less than $0$. If this is the case, then we use the identity $\sinh(x) = -i\sin(ix)$ to obtain
+
 $$
 \begin{aligned}
 \sinh(q)^2 &= \left\vert \frac{b+c}{2} \right\vert^2 - \frac{1}{4}( A_{12} - A_{21} )^2, \\
@@ -435,8 +471,10 @@ $$
 iq &= \sin^{-1} \left( \sqrt{-\left( \left\vert \frac{b+c}{2} \right\vert^2 - \frac{1}{4}( A_{12} - A_{21} )^2 \right)} \right).
 \end{aligned}
 $$
+
 The important thing is that we are able to recover $q$ or at least $iq$, from which we can then immediately compute $t_1$.
 Once we have $t_1$, then we simply use the formulas obtained previously to compute
+
 $$
 \begin{aligned}
 u &= \frac{b+c}{2 t_1}, &
@@ -444,6 +482,7 @@ u &= \frac{b+c}{2 t_1}, &
 \omega &= \frac{A_{21}-A_{12}}{2 t_1}, &
 \end{aligned}
 $$
+
 This completes the computation of the logarithm.
 
 ### Conclusion
