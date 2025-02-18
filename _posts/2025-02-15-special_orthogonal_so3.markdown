@@ -195,7 +195,7 @@ In the next section, we will use it in deriving the adjoint matrix.
 
 #### Adjoint and Lie bracket
 
-To study the adjoint maps, let $R \in \mathbf{SO}(3)$ be arbitrary, and denote by $R_1,R_2,R_3 \in \R^3$ the columns of $R$.
+To study the adjoint maps, let $R \in \mathbf{SO}(3)$ be arbitrary, and denote by $R_1,R_2,R_3 \in \mathbb{R}^3$ the columns of $R$.
 Then for the basis matrix $E_1 = e_1^\times \in \mathfrak{so}(3)$,
 
 $$\begin{aligned}
