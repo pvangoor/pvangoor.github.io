@@ -26,10 +26,14 @@ $$\begin{aligned}
 \end{aligned}$$
 
 The first condition $R^\top R = I_3$ is equivalent to saying that each column of $R$ must have length $1$ and be orthogonal (perpendicular) to every other column.
-The second condition, $\det(R)=1$ concerns the order of the columns of $R$. It enforces a `right-handed' orientation.
+The second condition, $\det(R)=1$ concerns the order of the columns of $R$. It enforces a `right-handed' orientation of each rotation matrix, and it is what makes them *special* orthogonal rather than simply orthogonal matrices.
 
 We can verify the group properties as follows.
-The identity clearly satisfies $I^\top I=I$ and $\det(I)=1$. As for the inverse, note that the first condition $R^\top R = I_3$ means that $R^{-1} = R^\top$. Therefore, for any $R \in \mathbf{SO}(3)$, we have that $(R^\top)^\top (R^\top) = R R^{-1} = I_3$, and that $\det(R^\top) = \det(R) = 1$. So the group is indeed closed under inversion. Finally, if $R_1, R_2 \in \mathbf{SO}(3)$, then
+The identity matrix clearly satisfies $I^\top I=I$ and $\det(I)=1$, so $I \in \mathbf{SO}(3)$. 
+As for matrix inversion, note that the first condition $R^\top R = I_3$ means that $R^{-1} = R^\top$.
+Therefore, for any $R \in \mathbf{SO}(3)$, we have that $(R^\top)^\top (R^\top) = R R^{-1} = I_3$, and that $\det(R^\top) = \det(R) = 1$.
+So the group is indeed closed under inversion. 
+Finally, to see that the group is closed under matrix products, if $R_1, R_2 \in \mathbf{SO}(3)$, then
 
 $$\begin{aligned}
     (R_1 R_2)^\top (R_1 R_2)
@@ -39,9 +43,8 @@ $$\begin{aligned}
     \det(R_1 R_2) &= \det(R_1) \det(R_2) = 1.
 \end{aligned}$$
 
-This verifies that the group is closed under products, and indeed that $\mathbf{SO}(3)$ is a group.
-
-This is a way of formally verifying the intuition that composing two rotations should lead to another rotation.
+Thus $\mathbf{SO}(3)$ is indeed a group.
+What this means intuitively is that composing two or more rotations always leads to another rotation, and that any rotation can be undone by its inverse rotation.
 
 ### Lie algebra
 
@@ -55,7 +58,8 @@ $$\begin{aligned}
 \end{aligned}$$
 
 where all second-order terms have been removed.
-In other words, the Lie algebra is defined by
+Differentiating the condition $\det(R) = 1$ leads only to $\mathrm{tr}(\Omega) = 0$, which is already guaranteed by the fact that $\Omega + \Omega^\top = 0$.
+Hence, the Lie algebra of $\mathbf{SO}(3)$ is
 
 $$\begin{aligned}
     \mathfrak{so}(3)
@@ -133,7 +137,8 @@ $$\begin{aligned}
 \end{aligned}$$
 
 We chose this particular basis and notation for a good reason, namely, that it relates the Lie algebra $\mathfrak{so}(3)$ with the classis vector cross product.
-Specifically, if we have a vector $a \in \mathbb{R}^3$, then the matrix $a^\times \in \mathfrak{so}(3)$ is the unique matrix that satisfies $a \times b = a^\times b$ for all $b \in \mathbb{R}^3$.
+That is also why we use the notation $a^\times$ rather than the notation $a^\wedge$ used for other Lie algebras, although different authors have different conventions.
+The reason for these particular basis matrices is that if we have a vector $a \in \mathbb{R}^3$, then the matrix $a^\times \in \mathfrak{so}(3)$ is the unique matrix such that $a \times b = a^\times b$ for all $b \in \mathbb{R}^3$.
 
 #### An Important Cross Product Identity
 
@@ -250,7 +255,7 @@ $$\begin{aligned}
 &= R
 \end{aligned}$$
 
-Differentiating this matrix in terms of the Lie group element $L$ at the identity is an easy way to obtain the "little" adjoint matrix and, equivalently, the Lie bracket.
+Differentiating this matrix in terms of the Lie group element $R$ at the identity is an easy way to obtain the "little" adjoint matrix and, equivalently, the Lie bracket.
 
 $$\begin{aligned}
 \mathrm{ad}_{\omega}^\vee
@@ -258,12 +263,21 @@ $$\begin{aligned}
 [\omega_1, \omega_2] &= \omega_1 \times \omega_2.
 \end{aligned}$$
 
+Lastly, this Lie bracket provides us with another useful skew operator identity, namely,
+
+$$\begin{aligned}
+(\omega_1^\times \omega_2)^\times
+&= [\omega_1, \omega_2]^\times
+= [\omega_1^\times, \omega_2^\times]
+= \omega_1^\times \omega_2^\times - \omega_2^\times \omega_1^\times.
+\end{aligned}$$
+
 
 #### Exponential and Logarithm
 
-Next is the exponential and logarithm.
-These also have nice forms, and the exponential formula is often referred to as the Rodrigues formula.
-We begin with the exponential formula, which we can study by letting $\omega^\times \in \mathfrak{so}(3)$ be an arbitrary skew-symmetric matrix.
+Next are the exponential and logarithm, which also have nice forms.
+The exponential formula for $\mathbf{SO}(3)$ is often referred to as the Rodrigues formula.
+To derive the exponential formula, we let $\omega^\times \in \mathfrak{so}(3)$ be an arbitrary skew-symmetric matrix.
 Then we notice the following important identity:
 
 $$\begin{aligned}
@@ -352,7 +366,7 @@ $$\begin{aligned}
 
 To see how the infinite sums collapsed, have a look at the [power series expansions of sine and cosine](https://en.wikipedia.org/wiki/Trigonometric_functions#Power_series_expansion).
 The fractions above are well-defined since we assumed $\omega \neq 0$.
-In case that $\omega = 0$, then the exponential is simply $\exp(0^\times) = I_3$.
+In the case that $\omega = 0$, then the exponential is simply $\exp(0^\times) = I_3$.
 
 Computing the logarithm is a matter of inverting the exponential formula, although we need to be careful since there is not always a unique logarithm defined!
 Suppose that $R = \exp(\omega^\times)$ for some $\omega \in \mathbb{R}^3$.
@@ -384,7 +398,7 @@ $$
 \vert \omega \vert = \cos^{-1}\left( \frac{\mathrm{tr}(R) - 1}{2} \right)
 $$
 
-Then, the vector direction of the rotation can be extracted from the skew-symmetric part of $R$.
+Then, the vector direction of $\omega$ can be extracted from the skew-symmetric part of $R$.
 Observe that
 
 $$\begin{aligned}
@@ -400,10 +414,10 @@ R - R^\top
 % ------------
 \end{aligned}$$
 
-Since we already know $\vert \omega \vert$, we can now obtain
+Since we already know $\vert \omega \vert$ from the trace formula, we now obtain
 
 $$\begin{aligned}
-\omega  = \frac{\vert \omega \vert}{2 \sin(\vert \omega \vert)}(R - R^\top)^\vee
+\omega  = \frac{\vert \omega \vert}{2 \sin(\vert \omega \vert)}(R - R^\top)^\vee.
 \end{aligned}$$
 
 This formula applies when $\vert\omega\vert \in (0, \pi)$, but what about the other cases?
