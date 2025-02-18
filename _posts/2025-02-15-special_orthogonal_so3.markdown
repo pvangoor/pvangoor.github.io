@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "The Indefinite Orthogonal Group O(1,2)"
-date:   2024-07-09
+title:  "The Special Orthogonal Group SO(3)"
+date:   2025-02-15
 categories: Mathematics
 ---
 
