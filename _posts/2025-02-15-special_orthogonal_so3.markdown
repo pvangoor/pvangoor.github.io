@@ -29,10 +29,10 @@ The first condition $R^\top R = I_3$ is equivalent to saying that each column of
 The second condition, $\det(R)=1$ concerns the order of the columns of $R$. It enforces a `right-handed' orientation of each rotation matrix, and it is what makes them *special* orthogonal rather than simply orthogonal matrices.
 
 We can verify the group properties as follows.
-The identity matrix clearly satisfies $I^\top I=I$ and $\det(I)=1$, so $I \in \mathbf{SO}(3)$. 
+The identity matrix clearly satisfies $I^\top I=I$ and $\det(I)=1$, so $I \in \mathbf{SO}(3)$.
 As for matrix inversion, note that the first condition $R^\top R = I_3$ means that $R^{-1} = R^\top$.
 Therefore, for any $R \in \mathbf{SO}(3)$, we have that $(R^\top)^\top (R^\top) = R R^{-1} = I_3$, and that $\det(R^\top) = \det(R) = 1$.
-So the group is indeed closed under inversion. 
+So the group is indeed closed under inversion.
 Finally, to see that the group is closed under matrix products, if $R_1, R_2 \in \mathbf{SO}(3)$, then
 
 $$\begin{aligned}
@@ -192,7 +192,6 @@ $$\begin{aligned}
 This identification is extremely useful in manipulating expressions involving cross products and skew matrices.
 In the next section, we will use it in deriving the adjoint matrix.
 
-
 #### Adjoint and Lie bracket
 
 To study the adjoint maps, let $R \in \mathbf{SO}(3)$ be arbitrary, and denote by $R_1,R_2,R_3 \in \mathbb{R}^3$ the columns of $R$.
@@ -271,7 +270,6 @@ $$\begin{aligned}
 = [\omega_1^\times, \omega_2^\times]
 = \omega_1^\times \omega_2^\times - \omega_2^\times \omega_1^\times.
 \end{aligned}$$
-
 
 #### Exponential and Logarithm
 
@@ -514,7 +512,7 @@ $$
 To compute this, define $l(R) = \frac{1}{2}\vert R - M \vert^2$ and differentiate to obtain
 
 $$\begin{aligned}
-\mathrm{D}l(R)[R \Omega] 
+\mathrm{D}l(R)[R \Omega]
 &= \langle R - M, R \Omega \rangle \\
 &= \langle I - R^\top M, \Omega \rangle \\
 &= \frac{1}{2}\langle M^\top R - R^\top M, \Omega \rangle.
