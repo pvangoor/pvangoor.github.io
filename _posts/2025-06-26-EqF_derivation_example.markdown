@@ -2,7 +2,7 @@
 layout: post
 title:  "Example of the Computation of EqF Matrices"
 date:   2025-06-26
-categories: Papers, Mathematics
+categories: Papers
 ---
 
 {% include math.html %}
