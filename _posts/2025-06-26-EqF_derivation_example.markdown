@@ -118,7 +118,7 @@ $$\begin{aligned}
     \Lambda(\eta, \Omega) = \Omega^\times,
 \end{aligned}$$
 
-for all $\eta \in S^2$ and $\Omega \in \R^3$.
+for all $\eta \in S^2$ and $\Omega \in \mathbb{R}^3$.
 It is worth noting that this is quite a special case.
 It is not always possible to find a lift independent of the state $\eta$, but if it is then this is usually desirable since it greatly simplifies some of the later computations.
 
@@ -149,7 +149,7 @@ This choice is arbitrary, although it is generally useful to pick something easy
 For this example, we choose the origin to be the unit vector $\mathbf{e}_1 = (1,0,0) \in S^2$.
 
 Next, we need to choose a subspace of the Lie algebra $\mathfrak{so}(3)$ to define normal coordinates on the manifold.
-The reason this is needed is because the Lie group $\mathbf{SO}(3)$ is larger (in dimension) than the state space $S^2$, and the normal coordinates are a way to choose a two dimensional subset of $\mathbf{SO}(3)$ that represents the state space $S^2$ (at least near the chosen origin $\mathbf{e}_1$).
+The reason this is needed is because the Lie group $\mathbf{SO}(3)$ is larger (in dimension) than the state space $S^2$, and the normal coordinates are a way to choose a two dimensional subset of $\mathbf{SO}(3)$ that represents the state space $S^2$ (at least near the chosen origin $\mathbf{e}_1$ ).
 The subspace we choose will be labelled $\mathfrak{m} \subset \mathfrak{so}(3)$, and it must satisfy $\mathrm{D}_R|_I \phi(R, \mathbf{e}_1)[\mathfrak{m}] = \mathrm{T}_{\mathbf{e}_1}S^2$.
 In other words, the differential map $\mathrm{D}_R|_I \phi(R, \mathbf{e}_1) : \mathfrak{so}(3) \to \mathrm{T}_{\mathbf{e}_1}S^2$ must be full rank when constrained to $\mathfrak{m}$.
 For any $\Omega^\times \in \mathfrak{so}(3)$, we have
@@ -200,6 +200,7 @@ $$\begin{aligned}
         \varepsilon_1 \\ \varepsilon_2
     \end{pmatrix}.
 \end{aligned}$$
+
 In other words, we can express the differential $\mathrm{D} \vartheta^{-1}(0)$ as the $3\times 2$ matrix shown.
 The differential $\mathrm{D} \vartheta(\mathbf{e}_1)$ can be obtained as the left-inverse of $\mathrm{D} \vartheta^{-1}(0)$, i.e.
 
