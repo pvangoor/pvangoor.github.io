@@ -16,9 +16,9 @@ We will not restrict ourselves to the unit quaternions, instead exploring the fu
 
 ### Basic group properties
 
-Throughout this article, we will write a quaternion $q \in \mathbb{H}$ as
+Throughout this article, we will write a quaternion $$q \in \mathbb{H}$$ as
 $$ q = (r, u), $$
-where $r \in \mathbb{R}_{\neq 0}$ and $u \in \mathbb{R}^3$ represent the real and imaginary parts of $q$, respectively.
+where $$r \in \mathbb{R}_{\neq 0}$$ and $$u \in \mathbb{R}^3$$ represent the real and imaginary parts of $$q$$, respectively.
 The product is defined by
 
 $$\begin{aligned}
@@ -30,7 +30,7 @@ The inverse of a quaternion is defined by
 
 $$ q^{-1} =  (r^2 + \vert u \vert^2)^{-1} (r, -u). $$
 
-And the group identity is given by $ e := (1, 0_3) $.
+And the group identity is given by $$ e := (1, 0_3) $$.
 
 The quaternions act on themselves by conjugation. Specifically,
 
@@ -63,7 +63,7 @@ r_1^2 u_2 + 2 r_1 u_1 \times u_2 + u_1 u_1^\top u_2 + u_1 \times (u_1 \times u_2
 u_2 + (2 r_1 u_1 \times u_2 + 2 u_1 \times (u_1 \times u_2))(r_1^2 + \vert u_1 \vert^2)^{-1}).
 \end{aligned}$$
 
-Let us denote $ \vert q_1 \vert = \sqrt{r_1^2 + \vert u_1 \vert^2}$ and define $u_1^\times \in \mathbb{R}^{3\times 3}$ to be the `skew' matrix such that $u_1^\times u_2 = u_1 \times u_2$.
+Let us denote $$ \vert q_1 \vert = \sqrt{r_1^2 + \vert u_1 \vert^2}$$ and define $$u_1^\times \in \mathbb{R}^{3\times 3}$$ to be the `skew' matrix such that $$u_1^\times u_2 = u_1 \times u_2$$.
 Then we end up with a nice and simple formula:
 
 $$
@@ -76,24 +76,24 @@ $$
 
 There are many ways to think of the Lie algebra of a given Lie group.
 Since our main interest is computation, we will choose the way that is easiest to work with for computation.
-The Lie algebra $\mathfrak{h}$ of $\mathbb{H}$ can identified with the tangent space at the identity $e$.
+The Lie algebra $$\mathfrak{h}$$ of $$\mathbb{H}$$ can identified with the tangent space at the identity $$e$$.
 This definition is abstract, so we assign some coordinates.
-A Lie algebra element is described as $w^\vee := (s, v) \in \mathbb{R}^4$, where the $\vee$ operator is the map from the abstract Lie algebra to the coordinates in $\mathbb{R}^4$.
+A Lie algebra element is described as $$w^\vee := (s, v) \in \mathbb{R}^4$$, where the $$\vee$$ operator is the map from the abstract Lie algebra to the coordinates in $$\mathbb{R}^4$$.
 Near the identity, quaternion group elements can be written as
 
 $$ q = e + t w, \quad (r,u) = (1+t s, t v), $$
 
-for small values of $t \in \mathbb{R}$.
+for small values of $$t \in \mathbb{R}$$.
 
 #### Exponential and Logarithm
 
 The exponential relates the Lie algebra to the Lie group.
 We will use the `1-parameter subgroup' definition here.
-Given a Lie algebra element $w^\vee = (s,v)$, the exponential $\exp(w)$ is defined as the solution to the initial value problem
+Given a Lie algebra element $$w^\vee = (s,v)$$, the exponential $$\exp(w)$$ is defined as the solution to the initial value problem
 
 $$ q(0) = e, \quad \dot{q}(t) = q(t) * w, $$
 
-at $t = 1$. Let us evaluate the differential equation to find
+at $$t = 1$$. Let us evaluate the differential equation to find
 
 $$ \begin{aligned}
 \dot{q} &= q * w \\
@@ -106,7 +106,7 @@ $$ \begin{aligned}
 \end{aligned} $$
 
 This ODE is not straightforward to solve, unless we realise that this system is, in fact, linear!
-Writing $q$ as a vector in $\mathbb{R}^4$, we have
+Writing $$q$$ as a vector in $$\mathbb{R}^4$$, we have
 
 $$ \begin{aligned}
 \left. \frac{\mathrm{d}}{\mathrm{d} t} \right\vert_{t=0}
@@ -117,14 +117,14 @@ $$ \begin{aligned}
 \begin{pmatrix} r \\ u \end{pmatrix} + s \begin{pmatrix} r \\ u \end{pmatrix}.
 \end{aligned} $$
 
-Since $s$ acts as a scaling factor, we can pull it out of the equation for now, and solve the problem without it.
+Since $$s$$ acts as a scaling factor, we can pull it out of the equation for now, and solve the problem without it.
 Specifically,
 
 $$
 \left. \frac{\mathrm{d}}{\mathrm{d} t} \right\vert_{t=0} e^{-t s} q = e^{-t s} \dot{q} - s e^{-t s} q = A e^{-t s} q,
 $$
 
-so if we solve the problem while ignoring $s$, we can add it back in at the end.
+so if we solve the problem while ignoring $$s$$, we can add it back in at the end.
 To solve the ODE now, we only have to compute the matrix exponential
 
 $$ \begin{aligned}
@@ -132,7 +132,7 @@ A &:= \begin{pmatrix} 0 & - v^\top \\ v & - v^\times \end{pmatrix} &
 \exp(A) &= \sum_{k=0}^\infty \frac{1}{k!} A^k.
 \end{aligned} $$
 
-Examining the first nontrivial power of $A$ reveals that
+Examining the first nontrivial power of $$A$$ reveals that
 
 $$ \begin{aligned}
 A^2 &= \begin{pmatrix} 0 & - v^\top \\ v & - v^\times \end{pmatrix}^2
@@ -160,17 +160,17 @@ $$ \begin{aligned}
 &= \begin{pmatrix} e^s \cos(\vert v \vert) \\ e^s \sin(\vert v \vert) \frac{v}{\vert v \vert} \end{pmatrix}.
 \end{aligned} $$
 
-Note that, if $\vert v \vert = 0$, then the whole computation simplifies and the solution is simply $\exp(w) = ( e^s, 0_3)$.
+Note that, if $$\vert v \vert = 0$$, then the whole computation simplifies and the solution is simply $$\exp(w) = ( e^s, 0_3)$$.
 
-The logarithm is found by inverting this formula, although there may be multiple solutions for a given $q \in \mathbb{H}$.
-Suppose that $q = \exp(w)$. Then we wish to determine the components of $w = (s, v)$ in terms of $q = (r, u)$. We have
+The logarithm is found by inverting this formula, although there may be multiple solutions for a given $$q \in \mathbb{H}$$.
+Suppose that $$q = \exp(w)$$. Then we wish to determine the components of $$w = (s, v)$$ in terms of $$q = (r, u)$$. We have
 
 $$ \begin{aligned}
 q &= \exp(w), \\
 (r, u) &= (e^s \cos(\vert v \vert), e^s \sin(\vert v \vert) \frac{v}{\vert v \vert}).
 \end{aligned} $$
 
-Immediately, we see that $e^s = r / \cos(\vert v \vert)$. Substituting this into the $u$-component,
+Immediately, we see that $$e^s = r / \cos(\vert v \vert)$$. Substituting this into the $$u$$-component,
 
 $$ \begin{aligned}
 u &= r \tan(\vert v \vert) \frac{v}{\vert v \vert}, \\
@@ -179,7 +179,7 @@ r^{-1} \vert u \vert \frac{u}{\vert u \vert} &= \tan(\vert v \vert) \frac{v}{\ve
 v &=  \frac{\arctan(r^{-1} \vert u \vert)}{\vert u \vert} u
 \end{aligned} $$
 
-Rather than substitute this back into the formula for $e^s$, we observe that the norm of both sides of the original equation satisfies
+Rather than substitute this back into the formula for $$e^s$$, we observe that the norm of both sides of the original equation satisfies
 
 $$ \begin{aligned}
 \vert q \vert &= \vert \exp(w) \vert, \\
@@ -193,12 +193,12 @@ $$ \begin{aligned}
 \log(q) &= \left( \frac{1}{2} \ln(r^2 + \vert u \vert^2), \; \frac{\arctan(r^{-1} \vert u \vert)}{\vert u \vert} u \right).
 \end{aligned} $$
 
-Similarly to the exponential formula, we should note that, if $\vert u \vert = 0$, the formula simplifies to $\log(q) = (\ln(r), 0_3)$.
+Similarly to the exponential formula, we should note that, if $$\vert u \vert = 0$$, the formula simplifies to $$\log(q) = (\ln(r), 0_3)$$.
 
 #### Adjoint Operators and Lie Bracket 
 
 The big and little Adjoint operators are another important aspect of the Quaternion Lie algebra.
-The `big' Adjoint operator $\mathrm{Ad} : \mathbb{H} \times \mathfrak{h} \to \mathfrak{h}$ is defined by
+The `big' Adjoint operator $$\mathrm{Ad} : \mathbb{H} \times \mathfrak{h} \to \mathfrak{h}$$ is defined by
 
 $$ \begin{aligned}
 \mathrm{Ad}_q (w)
@@ -218,7 +218,7 @@ $$ \begin{aligned}
 \end{pmatrix}.
 \end{aligned} $$
 
-The `little' adjoint operator $\mathrm{ad} : \mathfrak{h} \times \mathfrak{h} \to \mathfrak{h}$ is defined as the derivative of the big Adjoint operator,
+The `little' adjoint operator $$\mathrm{ad} : \mathfrak{h} \times \mathfrak{h} \to \mathfrak{h}$$ is defined as the derivative of the big Adjoint operator,
 
 $$ \begin{aligned}
 \mathrm{ad}_{w_1} (w_2)
@@ -246,9 +246,9 @@ $$ \begin{aligned}
 
 ### Matrix Representation
 
-The final topic of interest for computations is the matrix representation of $\mathbb{H}$.
+The final topic of interest for computations is the matrix representation of $$\mathbb{H}$$.
 Matrix representations are rarely unique, but sometimes can be nice.
-The matrix representation we consider is $\rho : \mathbb{H} \to \mathbf{GL}(4)$, given by
+The matrix representation we consider is $$\rho : \mathbb{H} \to \mathbf{GL}(4)$$, given by
 
 $$ \begin{aligned}
 \rho(q) := \begin{pmatrix}
@@ -259,12 +259,12 @@ $$ \begin{aligned}
 \end{pmatrix}.
 \end{aligned} $$
 
-The matrix representation of the Lie algebra $\mathfrak{h}$ is basically the same.
+The matrix representation of the Lie algebra $$\mathfrak{h}$$ is basically the same.
 Verifying that these are indeed representations is a messy and time-consuming computation.
 However, working out a matrix representation is very rewarding in that it provides a way to check all the other computations we have done.
-Specifically, we can check things like the inverse $\rho(q)^{-1} = \rho(q^{-1})$, the exponential $\mathrm{expm}(\mathrm{d}\rho(w)) = \rho(\exp(w))$, and the adjoint operators $\mathrm{Ad}_q w = \rho(q) \mathrm{d}\rho(w) \rho(q)^{-1}$.
+Specifically, we can check things like the inverse $$\rho(q)^{-1} = \rho(q^{-1})$$, the exponential $$\mathrm{expm}(\mathrm{d}\rho(w)) = \rho(\exp(w))$$, and the adjoint operators $$\mathrm{Ad}_q w = \rho(q) \mathrm{d}\rho(w) \rho(q)^{-1}$$.
 
 ### Summary
 
-I decided to write this post when I needed these formulas for the $n$th time, and I realised that deriving them every time I needed them was taking too long.
+I decided to write this post when I needed these formulas for the $$n$$th time, and I realised that deriving them every time I needed them was taking too long.
 I hope they are helpful to anyone else who reads them, and please let me know if you spot any mistakes!

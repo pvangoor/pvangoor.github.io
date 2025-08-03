@@ -9,7 +9,7 @@ categories: Mathematics
 
 ### Introduction
 
-The Special Euclidean SE(n) group describes the orientation-preserving isometries of the Euclidean space $\mathbb{R}^n$, where $n \in \mathbb{N}$ is some integer.
+The Special Euclidean SE(n) group describes the orientation-preserving isometries of the Euclidean space $$\mathbb{R}^n$$, where $$n \in \mathbb{N}$$ is some integer.
 This group can be represented using matrices, as
 
 $$\begin{aligned}
@@ -44,7 +44,7 @@ $$\begin{aligned}
         \end{pmatrix}
 \end{aligned}$$
 
-The group properties are easily verified. The identity is $I_3 \in \mathbf{SE}(2)$ and the product and inverse are
+The group properties are easily verified. The identity is $$I_3 \in \mathbf{SE}(2)$$ and the product and inverse are
 
 $$\begin{aligned}
     X_1 X_2 &= \begin{pmatrix}
@@ -100,7 +100,7 @@ $$\begin{aligned}
 
 ### Lie algebra
 
-The Lie algebra can be obtained by differentiating the matrix $X$ at $\theta = 0$ and $p = 0_{2\times 1}$.
+The Lie algebra can be obtained by differentiating the matrix $$X$$ at $$\theta = 0$$ and $$p = 0_{2\times 1}$$.
 We get that
 
 $$\begin{aligned}
@@ -120,11 +120,11 @@ $$\begin{aligned}
         \end{pmatrix}.
 \end{aligned}$$
 
-The notation $\omega^\times$ is a very useful one.
-The operator $\cdot^\times : \mathbb{R} \to \mathbb{R}^{2\times 2}$ is linear, so $(\omega_1 + \omega_2)^\times = \omega_1^\times + \omega_2^\times$ and, in particular, $\omega^\times = \omega 1^\times$.
-This is a particularly nice feature since $1^\times = R(\pi/2)$.
+The notation $$\omega^\times$$ is a very useful one.
+The operator $$\cdot^\times : \mathbb{R} \to \mathbb{R}^{2\times 2}$$ is linear, so $$(\omega_1 + \omega_2)^\times = \omega_1^\times + \omega_2^\times$$ and, in particular, $$\omega^\times = \omega 1^\times$$.
+This is a particularly nice feature since $$1^\times = R(\pi/2)$$.
 
-The Lie algebra $\mathfrak{se}(2)$ is a vector space by definition, and we can relate it to $\mathbb{R}^3$ by choosing a basis, or simply by defining a "wedge" map $\cdot^\wedge : \mathbb{R}^3 \to \mathfrak{se}(2)$.
+The Lie algebra $$\mathfrak{se}(2)$$ is a vector space by definition, and we can relate it to $$\mathbb{R}^3$$ by choosing a basis, or simply by defining a "wedge" map $$\cdot^\wedge : \mathbb{R}^3 \to \mathfrak{se}(2)$$.
 This map is required to be an isomorphism in the vector space sense, so it must be linear and invertible.
 We choose the wedge map and its inverse, the vee map, to be
 
@@ -145,8 +145,8 @@ $$\begin{aligned}
     \end{pmatrix},
 \end{aligned}$$
 
-where $\omega \in \mathbb{R}$ and $v \in \mathbb{R}^2$.
-In other words, we define a basis of $\mathfrak{se}(2)$ by
+where $$\omega \in \mathbb{R}$$ and $$v \in \mathbb{R}^2$$.
+In other words, we define a basis of $$\mathfrak{se}(2)$$ by
 $$\begin{aligned}
     E_1 &:= \begin{pmatrix}
         1^\times & 0_{2 \times 1} \\
@@ -161,7 +161,7 @@ $$\begin{aligned}
         0_{1\times 2} & 0
     \end{pmatrix},
 \end{aligned}$$
-where $\mathbf{e}_1, \mathbf{e}_2 \in \mathbb{R}^2$ are the standard basis vectors.
+where $$\mathbf{e}_1, \mathbf{e}_2 \in \mathbb{R}^2$$ are the standard basis vectors.
 
 #### Adjoint and Lie bracket
 
@@ -177,7 +177,7 @@ $$\begin{aligned}
     \end{pmatrix}.
 \end{aligned}$$
 
-We obtain a matrix expression for $\mathrm{Ad}_X$ by using the wedge and vee isomorphisms. Specifically, for any linear operator $L : \mathfrak{se}(2) \to \mathfrak{se}(2)$, we may define $L^\vee \in \mathbb{R}^{3\times 3}$ to be the matrix such that $L^\vee u = L(u^\wedge)^\vee$ for all $u \in \mathbb{R}^3$.
+We obtain a matrix expression for $$\mathrm{Ad}_X$$ by using the wedge and vee isomorphisms. Specifically, for any linear operator $$L : \mathfrak{se}(2) \to \mathfrak{se}(2)$$, we may define $$L^\vee \in \mathbb{R}^{3\times 3}$$ to be the matrix such that $$L^\vee u = L(u^\wedge)^\vee$$ for all $$u \in \mathbb{R}^3$$.
 From this definition, we obtain the Adjoint matrix
 
 $$\begin{aligned}
@@ -199,7 +199,7 @@ $$\begin{aligned}
 \end{pmatrix}
 \end{aligned}$$
 
-Differentiating this matrix in terms of the variable $X$ at the identity provides the "little" adjoint matrix and the Lie bracket
+Differentiating this matrix in terms of the variable $$X$$ at the identity provides the "little" adjoint matrix and the Lie bracket
 
 $$\begin{aligned}
 \mathrm{ad}_{U}^\vee&= \begin{pmatrix}
@@ -215,8 +215,8 @@ $$\begin{aligned}
 #### Exponential and Logarithm
 
 The exponential is "simply" given by the matrix exponential.
-However, it is nice to have formulas that do not rely on solving infinite power series, or, at least, hide these solutions in well-known elementary functions like $\sin$ and $\cos$.
-Let $U \in \mathfrak{se}(2)$. Then, we have that
+However, it is nice to have formulas that do not rely on solving infinite power series, or, at least, hide these solutions in well-known elementary functions like $$\sin$$ and $$\cos$$.
+Let $$U \in \mathfrak{se}(2)$$. Then, we have that
 
 $$\begin{aligned}
 U^2 &= \begin{pmatrix}
@@ -241,7 +241,7 @@ U^3 &= \begin{pmatrix}
 \end{aligned}$$
 
 This is the property that lets us simplify the exponential formula.
-It follows that $U^{2k+1} = -\omega^2 U^{2k-1} = (-1)^k\omega^{2k} U$ for all $k \geq 0$.
+It follows that $$U^{2k+1} = -\omega^2 U^{2k-1} = (-1)^k\omega^{2k} U$$ for all $$k \geq 0$$.
 We now solve the matrix exponential. We have that
 
 $$\begin{aligned}
@@ -302,21 +302,21 @@ R(\omega) &
 0_{1\times 2} & 1 \end{pmatrix} \\
 \end{aligned}$$
 
-When $\omega = 0$, the formula simplifies to
+When $$\omega = 0$$, the formula simplifies to
 
 $$\begin{aligned}
 \exp(U) = I_3 + U.
 \end{aligned}$$
 
 The expanded formula tells us how to take the logarithm as well.
-Given a matrix $X \in \mathbf{SE}(2)$, we match the terms in $\exp(U)= X$ to obtain
+Given a matrix $$X \in \mathbf{SE}(2)$$, we match the terms in $$\exp(U)= X$$ to obtain
 
 $$\begin{aligned}
 R(\theta) &= R(\omega), &
 p &= \frac{I_2 - R(\omega)}{\omega} 1^\times v.
 \end{aligned}$$
 
-The first term is solved by $\omega = \theta + 2k \pi$ for any $k \in \mathbb{N}$, so we choose $\omega \in [-\pi, \pi)$ as the standard solution.
+The first term is solved by $$\omega = \theta + 2k \pi$$ for any $$k \in \mathbb{N}$$, so we choose $$\omega \in [-\pi, \pi)$$ as the standard solution.
 The second term is then given by solving
 
 $$\begin{aligned}
@@ -325,7 +325,7 @@ p &= \frac{I_2 - R(\omega)}{\omega} R(\pi/2) v, \\
 v &= \omega R(-\pi/2) (I_2 - R(\omega) )^{-1} p.
 \end{aligned}$$
 
-Observe that $(I_2 - R(\omega) ) (I_2 - R(-\omega) ) = 2(1-\cos(\omega))I_2$. Thus,
+Observe that $$(I_2 - R(\omega) ) (I_2 - R(-\omega) ) = 2(1-\cos(\omega))I_2$$. Thus,
 
 $$\begin{aligned}
 v &= \omega R(-\pi/2) (I_2 - R(\omega) )^{-1} p \\
