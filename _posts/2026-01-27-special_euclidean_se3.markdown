@@ -14,6 +14,7 @@ Aside from describing their symmetry, it can also be used to represent the posit
 While the elements of this group can be viewed as consisting of a rotation matrix and a position vector, most people prefer to use the $$ 4\times 4$$ matrix form, sometimes called a *homogeneous matrix*.
 Like my other articles on Lie groups, my goal here is to provide derivations of some of the most useful and important formulas and identities that come up for $$ \mathbf{SE}(3) $$.
 That said, the previous [post on the special orthogonal group]({% post_url 2025-02-15-special_orthogonal_so3 %}) should be read before reading this one, since I will draw on a number of the results therein.
+For an excellent explanation of the relationships between frames of reference, their velocities, and the special Euclidean group, I recommend this [blog post by Shiraz Khan](https://shiraz-k.com/posts/robotics/).
 
 The special Euclidean group is defined by
 
